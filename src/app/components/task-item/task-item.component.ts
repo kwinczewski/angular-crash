@@ -11,6 +11,7 @@ export class TaskItemComponent {
   @Input() task: Task={} as Task;
   faTimes = faTimes;
   @Output() onDeletTask: EventEmitter<Task> = new EventEmitter()
+  @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter
 
   constructor(){
 
@@ -18,5 +19,9 @@ export class TaskItemComponent {
 
   onDelete(task: Task) {
     this.onDeletTask.emit(task)
+  }
+
+  onToggle(task: Task) {
+    this.onToggleReminder.emit(task)
   }
 }
